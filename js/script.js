@@ -50,18 +50,11 @@ function reload(arr) {
         p.onclick = () => {
             if(!item.isDone){
                 item.isDone = true
-                p.classList.add('active')
+                p.classList.add('line')
             }else {
                 item.isDone = false
-                p.classList.remove('active')
+                p.classList.remove('line')
             }
         }      
-        p.onclick = () =>{
-            if(p.classList.contains('line')){
-                p.classList.remove('line')
-            }else{
-                p.classList.add('line')
-            }
-        }  
     }
 }
