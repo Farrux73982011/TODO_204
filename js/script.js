@@ -21,6 +21,8 @@ form.onsubmit = (event) => {
   reload(todos);
 };
 
+let patterns = /^[A-Za-z -]*$/i
+
 function reload(arr) {
   container.innerHTML = "";
 
@@ -74,11 +76,28 @@ function reload(arr) {
     box.ondblclick = () => {
         modal.classList.remove('hide')
     };
-
+    let input = document.querySelector('.inp')
     close_btns.onclick = () => {
         modal.classList.add('hide')
     }
+    izmenit.forEach(inp => {
+      inp.onkeyup = () => {
+        if (patterns.test(inp.value)) {
+          inp.style.border = '2px solid red'
+        } else {
+          inp.style.border = '2px solid red'
+        }
+      }
+    })
+    input.forEach(inp => {
+      inp.onkeyup = () => {
+        if (patterns.test(inp.value)) {
+          inp.style.border = '2px solid blue'
+        } else {
+          inp.style.border = '2px solid red'
+        }
+      }
+    })
   }
 }
-
 
